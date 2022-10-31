@@ -1,0 +1,7 @@
+{
+  "name": "thisFire",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
