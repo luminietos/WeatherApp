@@ -1,23 +1,64 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>ThisFire</ion-title>
+<!-- the header w the menu -->
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Log In or Sign Up</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content>
-	<form [formGroup]="credentials" (ngSubmit)="login()">
+<!-- the menu-less header... -->
+<ion-header>
+	<ion-toolbar color="tertiary">
+	  <ion-title>Log In or Sign Up</ion-title>
+	</ion-toolbar>
+  </ion-header>
 
-		<ion-item fill="solid" class="ion-margin-bottom">
-			<ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
-			<ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Email is invalid</ion-note>
-		</ion-item>
-    
-		<ion-item fill="solid" class="ion-margin-bottom">
-			<ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
-			<ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">Password needs to be 6 characters</ion-note>
-		</ion-item>
+<ion-content class="logincontent">
+  <ion-text color="primary">
+    <h1>Welcome!</h1>
+    <h2>Already signed up? Sign In!</h2>
+  </ion-text>
 
-		<ion-button type="submit" expand="block" [disabled]="!credentials.valid">Log in</ion-button>
-		<ion-button type="button" expand="block" color="secondary" (click)="register()">Create account</ion-button>
-	</form>
+  <form [formGroup]="credentials" (ngSubmit)="login()">
+    <ion-item fill="solid" class="ion-margin-bottom">
+      <ion-input type="email" placeholder="Email" formControlName="email">
+      </ion-input>
+      <ion-note
+        slot="error"
+        *ngIf="(email.dirty || email.touched) && email.errors">
+		Email is invalid
+	  </ion-note>
+    </ion-item>
+
+    <ion-item fill="solid" class="ion-margin-bottom">
+      <ion-input type="password" placeholder="Password" formControlName="password">
+      </ion-input>
+      <ion-note
+        slot="error"
+        *ngIf="(password.dirty || password.touched) && password.errors"
+        >Password needs to be 6 characters</ion-note
+      >
+    </ion-item>
+
+    <!-- the "log in"/sign in button -->
+    <ion-button type="submit" expand="block" [disabled]="!credentials.valid">
+      Log in
+    </ion-button>
+    <ion-text color="primary">
+      <br />
+      <h3>Don't have an account?</h3>
+      <p>
+        Type in your email and a password of your choosing in the above fields and click the button
+        below to sign up.
+        <br />
+        OR continue as a guest.
+    </ion-text>
+    <!-- the "create account"/register button -->
+    <ion-button type="button" expand="block" color="secondary" (click)="register()">
+      Create an account
+    </ion-button>
+    <ion-button href="/main" expand="block">CONTINUE AS GUEST</ion-button>
+  </form>
 </ion-content>

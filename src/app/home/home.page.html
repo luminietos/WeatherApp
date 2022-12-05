@@ -1,24 +1,39 @@
 <ion-header>
-  <ion-toolbar color ="primary">
+  <ion-toolbar color="primary">
+	<!-- the menu button -->
     <ion-buttons slot="start">
-      <ion-button (click)="logout()">
-        <ion-icon slot="icon-only" name="log-out"></ion-icon>
-      </ion-button>
+      <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title>My profile</ion-title>
+    
+	<ion-title>My profile</ion-title>
+
+	<!-- the log out button -->
+    <ion-buttons slot="end">
+		<ion-button (click)="logout()">
+		  <ion-icon slot="icon-only" name="log-out"></ion-icon>
+		</ion-button>
+	  </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-	<div class="preview">
-		<ion-avatar (click)="changeImage()">
-			<img *ngIf="profile?.imageUrl; else placeholder_avatar;" 
-      [src]="profile.imageUrl" />
-			<ng-template #placeholder_avatar>
-				<div class="fallback">
-					<p>Select avatar</p>
-				</div>
-			</ng-template>
-		</ion-avatar>
+  <div class="title">
+		<h1>My profile</h1>
 	</div>
+  <div class="preview">
+    <ion-avatar (click)="changeImage()">
+      <img
+        *ngIf="profile?.imageUrl; else placeholder_avatar;"
+        [src]="profile.imageUrl"
+      />
+      <ng-template #placeholder_avatar>
+        <div class="fallback">
+          <p>Select avatar</p>
+        </div>
+      </ng-template>
+    </ion-avatar>
+  </div>
+  <div class="ion-padding">  
+    <ion-button href="/main">SEE THE WEATHER</ion-button>  
+  </div> 
 </ion-content>

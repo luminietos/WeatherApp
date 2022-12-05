@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <!-- the menu button -->
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Weather Forecast</ion-title>
+
+    <!-- the log out button -->
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style="text-align: center; margin: 15px; padding-top: 20px;">
+    <ion-label style="font-weight: 400; font-size: 1.5em">
+      Today's Weather
+    </ion-label>
+  </div>
+  
+  <ion-searchbar
+    class="search"
+    [(ngModel)]="cityName"
+    (ngModelChange)="loadData()"
+    placeholder="Search city"
+    animated="true">
+  </ion-searchbar>
+  
+  <div *ngIf="!loading">
+    <ion-card class="cardView">
+      <ion-item lines="none" class="card_text">
+        <p id="card_title">Today's Weather</p>
+        <ion-label id="date" slot="end">
+          {{dateToday | date: "EEE dd MMM"}}
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <span id="temp">
+          {{(weatherTemp?.main.temp - 273.15).toFixed(0)}}
+        </span>
+        <span id="celcius">o</span>
+        <img slot="end" [src]="weatherImage" />
+      </ion-item>
+      
+      <ion-item lines="none">
+        <ion-icon id="iconlocation" name="location"></ion-icon>
+        <span id="location">{{cityName}}</span>
+      </ion-item>
+    </ion-card>
+
+    <ion-card id="min">
+      <ion-item>
+        <span>Minimum Temperature</span>
+        <span slot="end">
+          {{(weatherTemp?.main.temp_min -273.15).toFixed(0)}}
+        </span>
+      </ion-item>
+    </ion-card>
+
+    <ion-card id="max">
+      <ion-item>
+        <span>Maximum Temperature</span>
+        <span slot="end">
+          {{(weatherTemp?.main.temp_max -273.15).toFixed(0)}}
+        </span>
+      </ion-item>
+    </ion-card>
+
+    <ion-card id="humidity" class="temperatureStyle">
+      <ion-item>
+        <span>Humidity</span>
+        <span slot="end">{{weatherTemp.main.humidity}}%</span>
+      </ion-item>
+    </ion-card>
+  </div>
+  <div *ngIf="loading" class="nodata">
+    <p>No data to show :(</p>
+    <p>Please type in a city name.</p>
+  </div>
+</ion-content>
+
+<!-- <ion-footer>
+  <div class="ion-padding">   
+    <ion-button href="/home">BACK TO PROFILE</ion-button>  
+  </div> 
+</ion-footer> -->

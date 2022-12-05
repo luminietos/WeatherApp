@@ -1,0 +1,39 @@
+ion-avatar {
+  width: 128px;
+  height: 128px;
+}
+
+.logincontent {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+h3 {
+    font-size: 50;
+    text-align: center;
+}
+
+p {
+    font-size: 20;
+    text-align: center;
+}
+
+.fallback {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: #bfbfbf;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}

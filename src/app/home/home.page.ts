@@ -18,7 +18,7 @@ export class HomePage {
 		private authService: AuthService,
 		private router: Router,
 		private loadingController: LoadingController,
-		private alertController: AlertController
+		private alertController: AlertController,
 	) {
 		this.avatarService.getUserProfile().subscribe((data) => {
 			this.profile = data;
@@ -29,6 +29,11 @@ export class HomePage {
 		await this.authService.logout();
 		this.router.navigateByUrl('/', { replaceUrl: true });
 	}
+
+	//	<ion-button (click)="go()">Go</ion-button>
+	// go() {
+	// 	this.router.navigate(['main']);
+	// }
 
 	async changeImage() {
 		const image = await Camera.getPhoto({

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+	<!-- the menu button -->
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    
+	<ion-title>About us</ion-title>
+
+	<!-- the log out button -->
+    <ion-buttons slot="end">
+		<ion-button (click)="logout()">
+		  <ion-icon slot="icon-only" name="log-out"></ion-icon>
+		</ion-button>
+	  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="title">
+		<h1>About us</h1>
+	</div>
+<ion-card>
+	<h3> This is a university group project, made in weeks 48-49 of 2022. 
+		<br />
+		<br />
+		You can find us at:
+	</h3>
+	<ion-icon name="logo-github" class="github"></ion-icon>
+	<p><a href="https://github.com/luminietos" target=”_blank”>Paloheimo</a></p>
+
+		<ion-icon name="logo-github" class="github"></ion-icon>
+		<p><a href="https://github.com/marivuolahti" target=”_blank”>Vuolahti</a></p>
+</ion-card>
+<div class="center">
+	<ion-icon name="accessibility-outline" class="ukkeli"></ion-icon>
+</div>
+</ion-content>

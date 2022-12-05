@@ -41,7 +41,10 @@
     {
       "files": ["*.html"],
       "extends": ["plugin:@angular-eslint/template/recommended"],
-      "rules": {}
+      "rules": {
+        // "no-used-vars": "off",
+        // "eslint-disable @typescript-eslint/no-unused-vars": "warn"
+      }
     }
   ]
 }

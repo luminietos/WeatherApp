@@ -1,0 +1,94 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nodata {
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  text-align: center;
+  font-size: larger;
+}
+
+.card_text {
+  color: #FFF;
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+.cardView {
+border-radius: 20px;
+padding: 20px;
+--ion-background-color:#83a490;
+}
+.temperatureStyle {
+  --ion-background-color:#83a490;
+}
+
+#card_title {
+  font-size: 30px;
+}
+
+#temp {
+  font-weight: 300;
+  font-size: 4em;
+  margin: 5px;
+  color: white;
+}
+#iconlocation {
+color: #3880ff;
+}
+#date {
+  color: #FFF;
+  font-size: 24px;
+}
+#celcius {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #3880ff;
+  margin-bottom:25px;
+}
+#min {
+  --ion-background-color: #e0ecf3;
+}
+#max {
+  --ion-background-color: #f8e5eb;
+}
+#humidity {
+  --ion-background-color: #f1eefc;
+}
+#location {
+  color: #FFF;
+  font-size: 20px;
+}
+
+.search {
+  --ion-background-color: #83a490;
+  color: #FFF;
+  border-radius: 20px;
+  padding: 15px;
+  padding-bottom: 0;
+  --icon-color: #FFF;
+}
